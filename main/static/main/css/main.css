@@ -1,0 +1,17 @@
+body {
+    background-color: gray;
+    margin: 40px;
+}
+
+h2 {
+    color: white;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo-img {
+    width: 30px;
+    height: 30px;
+}
