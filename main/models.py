@@ -13,7 +13,7 @@ class Client(models.Model):
     birth_date = models.DateField()
 
     def __str__(self):
-        return self.name
+        return f'{self.name} {self.email} {self.birth_date}'
 
 class Medicament(models.Model):
     name = models.CharField(max_length=200)
@@ -21,7 +21,7 @@ class Medicament(models.Model):
     price = models.DecimalField(decimal_places=2,max_digits=10)
 
     def __str__(self):
-        return self.name
+        return f'{self.name} {self.type} {self.price}'
 
 class Pharmacy(models.Model):
     name = models.CharField(max_length=200)
@@ -35,4 +35,4 @@ class Request(models.Model):
     pharmacy = models.ForeignKey(Pharmacy,on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.client.name
+        return f'{self.client.name} {self.medicament.name} {self.pharmacy.name}'
